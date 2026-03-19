@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 也是css3新特性 -->
+    <!-- 可以在js设置，但是js设置太多影响性能 -->
+    <!-- 百分比 或者 from(0%) to(100%) -->
+    <!-- animation：名称，持续时间，速率，延时，循环次数(默认1次)，播放方向（默认正向），状态（running / paused） -->
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            animation: myAnime 2s linear 0s infinite;
+        }
+
+        /* 鼠标移上去变颜色 */
+        .box1:hover {
+            /* background-color: blue; */
+            animation-play-state: paused
+        }
+
+        .box2 {
+            width: 300px;
+            height: 300px;
+            margin: 4px auto;
+            background-color: #2b92d4;
+            border-radius: 50%;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 3);
+            animation: breathe 1s  ease-in-out infinite alternate;
+
+        }
+
+
+        /* 创建动画 */
+        @keyframes myAnime {
+            from {
+                width: 200px;
+                background-color: red;
+            }
+
+            50% {
+                width: 400px;
+                background-color: aqua;
+            }
+
+            to {
+                width: 200px;
+                background-color: blueviolet;
+            }
+
+        }
+
+        /* 呼吸效果 */
+        @keyframes breathe {
+            0% {
+                /* 透明度 */
+                opacity: 0.2;
+                box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1)
+            }
+
+            50% {
+                /* 透明度 */
+                opacity: 0.5;
+                box-shadow: 0 1px 2px rgba(18, 190, 84, 0.76)
+            }
+
+            100% {
+                /* 透明度 */
+                opacity: 1;
+                box-shadow: 0 1px 30px rgba(59, 255, 255, 1)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+</body>
+
+</html>

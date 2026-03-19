@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5387745",
+      "name": "保存_o",
+      "font_class": "baocun_o",
+      "unicode": "eb47",
+      "unicode_decimal": 60231
+    }
+  ]
+}

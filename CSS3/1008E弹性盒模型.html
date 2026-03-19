@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex Box</title>
+
+    <!-- flex Box是CSS3的新特性，特别是在移动端很好用，小程序推荐 -->
+    <!-- 针对一个大元素里面子元素（比如一个个小盒子）的摆放 -->
+
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: #555;
+
+            /* 将外层容器的display设为flex，默认水平摆放 */
+            display: flex;
+            /* 方向row column，reverse有点像镜像 */
+            flex-direction: row-reverse;
+            flex-direction: column;
+
+            /* 垂直方向居上中下 */
+            justify-content: flex-end;
+            /* 水平方向居左中右 */
+            align-items: center;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+
+            /* 唯一一个写在子元素的flex-grow / flex，按权重分配空间，宽度不生效了 */
+            flex: 2;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: palevioletred;
+
+            flex: 2;
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+
+    </div>
+
+</body>
+
+</html>

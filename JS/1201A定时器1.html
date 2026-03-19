@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- JavaScript 提供定时执行代码的功能，叫做定时器（timer），
+     主要由 setTimeout() 和 setInterval() 这两个函数来完成。 -->
+
+    <script>
+        // setTimeout 函数用来指定代码在多少毫秒之后执行。
+        // 它返回一个整数，表示定时器的编号，以后可以用来取消这个定时器。
+        var timer = setTimeout(function () {
+            console.log("大家好，5s之后执行");
+        }, 5000);
+
+        clearTimeout(timer); //取消定时器
+
+        // 如果回调函数是对象的方法，那么setTimeout 使得方法内部
+        // 的 this 关键字指向全局环境，而不是定义时所在的那个对象
+        var name = "iwen";
+        var user = {
+            name: "it",
+            getName1: function () {
+                console.log(this.name);    //this指的是user
+            },
+            getName2: function () {
+                setTimeout(function () {
+                    console.log(this.name);   //this指的是全局
+                }, 3000)
+            },
+            // getName3的this指user, setTimeout的this指全局
+            getName3: function () {
+                var that = this;
+                setTimeout(function () {
+                    console.log(that.name);
+                }, 3000)
+            }
+        }
+
+        user.getName1();
+        user.getName2();
+        user.getName3();
+
+    </script>
+
+</body>
+
+</html>

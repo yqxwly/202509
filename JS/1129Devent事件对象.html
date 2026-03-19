@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .root {
+            width: 500px;
+            height: 500px;
+            background-color: aquamarine;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Event对象属性
+    1 Event.Target:点击谁返回谁
+    2 Event.type:只读的，返回事件类型 -->
+
+    <!-- Event对象方法
+    1 Event.preventDefault():取消浏览器对当前事件的默认行为
+    2 Event.stopPropagation()：阻止事件冒泡，即点子元素不会触发父元素的事件 -->
+
+    <button id="btn">按钮</button>
+    <a href="https://byyt.ustb.edu.cn" id="ustb">USTB</a>
+
+    <div class="root" id="root">
+        <div class="box" id="box"></div>
+    </div>
+
+    <script>
+
+        var btn = document.getElementById("btn");
+        var ustb = document.getElementById("ustb");
+        var root = document.getElementById("root");
+        var box = document.getElementById("box");
+
+        // Event事件对象其实就是参数
+        // btn.onclick = function (event) {
+        //     console.log(event);
+        // }
+
+        // Event.Target
+        // Event.type
+        btn.onclick = function (event) {
+            console.log(event.target);
+            event.target.innerHTML = "点击之后";
+            console.log(event.type);  //click
+        }
+
+        // Event.preventDefault()
+        ustb.onclick = function (event) {
+            event.preventDefault();  //不会跳转链接了
+            console.log("点击了A");
+        }
+
+        // Event.stopPropagation()
+        box.onclick = function (event) {
+            event.stopPropagation();  
+            console.log("box");
+        }
+
+        root.onclick = function (event) {
+            console.log("root");
+        }
+
+
+    </script>
+
+</body>
+
+</html>

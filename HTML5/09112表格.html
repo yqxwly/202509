@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格</title>
+</head>
+
+<body>
+    <!-- 表格同行等高，同列等宽 -->
+    <!-- table(broder單元格，height，width) -->
+    <!-- table表格 > tr行，td列 -->
+    <table>
+        <tr>
+            <td>卓卓</td>
+            <td>云云</td>
+        </tr>
+        <tr>
+            <td>思思</td>
+            <td>娜娜</td>
+        </tr>
+    </table>
+
+    <!-- table>tr*n>td*n{文字} -->
+    <table border="2px" width="300px" height="300px">
+        <tr>
+            <td>姓名</td>
+            <td>姓名</td>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td>姓名</td>
+        </tr>
+    </table>
+
+    <!-- 表格合并，colspan水平，rowspan垂直，默认向右向下合并 -->
+    <!-- 合并后对应删除，不然会顶出来 -->
+    <table border="3px" width="600px" height="300px">
+        <tr>
+            <td>格子1</td>
+            <td>格子2</td>
+            <td>格子3</td>
+            <td>格子4</td>
+            <td>格子5</td>
+        </tr>
+        <tr>
+            <!-- 合并6，7 -->
+            <td colspan="2">格子6，7</td>
+            <!-- <td>格子7</td> -->
+            <td>格子8</td>
+            <td>格子9</td>
+            <td>格子10</td>
+        </tr>
+        <tr>
+            <td>格子11</td>
+            <td>格子12</td>
+            <td>格子13</td>
+            <td>格子14</td>
+            <!-- 合并15，20 -->
+            <td rowspan="2">格子15，20</td>
+        </tr>
+        <tr>
+            <!-- 合并四个 -->
+            <td colspan="2" rowspan="2">格子16，17，21，22</td>
+            <!-- <td>格子17</td> -->
+            <td>格子18</td>
+            <td>格子19</td>
+            <!-- <td>格子20</td> -->
+        </tr>
+        <tr>
+            <!-- <td>格子21</td> -->
+            <!-- <td>格子22</td> -->
+            <td>格子23</td>
+            <td>格子24</td>
+            <td>格子25</td>
+        </tr>
+    </table>
+</body>
+
+</html>

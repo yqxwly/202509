@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 后代选择器， E F{}，E里面的所有F */
+        ul li {
+            color: blueviolet;
+        }
+
+        /* 子代选择器，E>F{}，直接子元素才生效 */
+        div>p {
+            text-decoration: line-through;
+        }
+
+        /* 相邻兄弟选择器，E+F{}，选择相邻往下的第一个兄弟元素 */
+        h3+p{
+            color: brown;
+        }
+
+        /* 通用兄弟选择器，E~F{}，E后面的所有F */
+        h2~p{
+            color: blueviolet;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 后代 -->
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <p>hhhhhhh</p>
+        <div>
+            <ol>
+                <li>1</li>
+                <li>2</li>
+            </ol>
+        </div>
+    </ul>
+
+    <!-- 子代 -->
+    <div>
+        <p>你好吗</p>
+        <ol>
+            <li>
+                <p>好啊</p>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 相邻兄弟 -->
+    <h3>我是标题</h3>
+    <p>内容1</p>
+    <p>内容2</p>
+
+    <!-- 通用兄弟 -->
+    <h2>我是标题</h2>
+    <p>内容1</p>
+    <p>内容2</p>
+
+</body>
+
+</html>

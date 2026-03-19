@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 单双引号可以相互嵌套, 单单双双不行
+        var str1 = "哈呀'哈基米'";
+        console.log(str1);
+        // 字符串长度
+        console.log(str1.length)
+
+        // 转义可以
+        var str2 = "顶啊顶\"动基\"";
+        document.write(str2);
+
+        // 换行也要转义
+        var longString = 'Long \
+                    long \
+                    string';
+        document.write(longString)
+
+        //  charAt 方法返回指定位置的字符，参数是从 0 开始编号的
+        // 如果参数为负数，或大于等于字符串的长度， charAt 返回空字符串
+        var s = new String('itbaizhan');
+        console.log(s.charAt(s.length - 1));  // "n"
+
+        // concat 方法用于连接两个字符串，返回一个新字符串，不改变原字符串
+        console.log(str1.concat(str2));
+        console.log(str1);
+        // 该方法可以接受多个参数
+        console.log(str1.concat(str2, "漫播哈激励"));
+        // 如果参数不是字符串， concat 方法会将其先转为字符串，然后再连接
+        console.log(''.concat(1, 2, '3'))
+        console.log(1 + 2 + "3")
+
+        // substring 方法用于从原字符串取出子字符串并返回，不改变原字符串
+        // （开始，结束），返回结果不包括结束的
+        console.log(str1.substring(3, 5 + 1));
+        // 如果省略第二个参数，则表示子字符串一直到原字符串的结束
+        console.log(str1.substring(3));
+        // 如果第一个参数大于第二个参数， substring 方法会自动更换两个参数的位置
+        // 如果参数是负数， substring 方法会自动将负数转为0
+
+        // substr 方法用于从原字符串取出子字符串并返回，不改变原字符串，跟 substring 方法的作用相同
+        // （开始，长度）
+        console.log(str1.substr(3, 3));
+        // 如果省略第二个参数，则表示子字符串一直到原字符串的结束
+        console.log(str1.substr(3));
+        // 如果第一个参数是负数，表示倒数计算的字符位置！！！长度还是往后的
+        console.log(str1.substr(-3));
+        // 如果第二个参数是负数，将被自动转为0，因此会返回空字符串（没有长度）
+
+
+        // indexOf 方法用于确定一个字符串在另一个字符串中第一次出现的位置
+        // 返回结果是匹配开始的位置。如果返回 -1 ，就表示不匹配
+        console.log(str2.indexOf('基'));
+        // 还可以接受第二个参数，表示从该位置开始向后匹配(包括该位置)
+        console.log(str2.indexOf('顶', 1));
+
+        // trim 方法用于去除字符串两端的空格，返回一个新字符串，不改变原字符串
+        // 去除的不仅是空格，还包括制表符（ \t 、 \v ）、换行符（ \n ）和回车符（ \r ）
+        console.log('  hello world  '.trim());
+        // ES6扩展方法， trimEnd() 和 trimStart() 方法
+        console.log('  hello world  '.trimEnd());  //去除后面的
+        console.log('  hello world  '.trimStart());
+
+
+        // split 方法按照给定规则分割字符串，返回一个由分割出来的子字符串组成的数组
+        console.log((str1 + "|" + str2 + "|" + "漫播哈激励").split("|"));
+        // 如果分割规则为空字符串，则返回数组的成员是原字符串的每一个字符
+        console.log((str1 + "|" + str2 + "|" + "漫播哈激励").split(""));
+        // 如果省略参数，则返回数组的唯一成员就是原字符串
+        console.log((str1 + "|" + str2 + "|" + "漫播哈激励").split());
+        // split 方法还可以接受第二个参数，限定返回数组的最大成员数
+        console.log((str1 + "|" + str2 + "|" + "漫播哈激励").split("|", 2));
+
+    </script>
+
+</body>
+
+</html>

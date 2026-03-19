@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box" id="root">Hello</div>
+
+    <!-- 通过操作js让标签与style交互 -->
+
+    <script>
+
+        // Element.id 属性返回指定元素的 id 属性，该属性可读写
+        var hello = document.getElementById("root");
+        // 改变id
+        hello.id = "roots";
+        // className 属性用来读写当前元素节点的 class 属性
+        hello.className = "box box1";
+
+        // 以上是整体改变，下面才是增删改查
+        // classList 对象有下列方法
+        // add() ：增加一个 class
+        hello.classList.add("foo", "bar");
+        // remove() ：移除一个 class
+        hello.classList.remove("foo");
+        // contains() ：检查当前元素是否包含某个 class,返回 true/ false
+        console.log(hello.classList.contains("box"));
+        // toggle() ：将某个 class 不存在就加入，否则移除
+        hello.classList.toggle("mybox");
+
+        // Element.innerHTML 属性返回一个字符串包含的所有HTML代码，可读写
+        // 打印文本内容
+        console.log(hello.innerHTML)
+        // 改变内容
+        console.log(hello.innerHTML = "大家好呀")
+        // innerText 和 innerHTML 类似
+        // 不同的是 innerText 无法识别元素，会把标签内容直接渲染成字符串
+        console.log(hello.innerText)
+
+
+    </script>
+
+</body>
+
+</html>

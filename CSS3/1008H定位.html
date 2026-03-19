@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- relative相对定位、absolute绝对定位、fixed固定定位 -->
+    <!-- 后续可以用 left、right、top、bottom 调整定位 -->
+    <!-- 绝对、固定会脱离文档流，固定不会随滑动 -->
+    <!-- 相对、绝对是相对于具有定位（一般relative）的父级元素进行位置调整，没有父级就向上查找，直到顶层文档 -->
+    <style>
+        .box1 {
+            height: 200px;
+            width: 200px;
+            background-color: blueviolet;
+
+            /* 定位 */
+            position: relative;
+            left: 200px;
+            top: 100px
+        }
+
+        .box2 {
+            height: 200px;
+            width: 200px;
+            background-color: gold;
+
+            position: absolute;
+            z-index: 2;
+            left: 200px;
+            top: 300px
+        }
+
+        .box3 {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+
+            position: absolute;
+            z-index: 1;
+            left: 200px;
+            top: 350px
+        }
+
+        .box4 {
+            height: 200px;
+            width: 200px;
+            background-color: palevioletred;
+            
+            position: fixed;
+            left: 200px;
+            top: 600px
+        }
+
+        h3 {
+            height: 3000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">相对</div>
+
+    <!-- 每设置一个绝对定位都是一层，浮动就只是新开了一层 -->
+    <!-- 覆盖顺序可以通过 z-index，大的在上面 -->
+    <div class="box2">绝对</div>
+    <div class="box3">绝对</div>
+
+    <!-- 固定定位，随着页面滚动保持原位置 -->
+    <div class="box4">固定</div>
+
+    <h3>哈哈哈</h3>
+    <h3>哈哈哈</h3>
+    <h3>哈哈哈</h3>
+
+
+</body>
+
+</html>

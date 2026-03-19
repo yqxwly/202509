@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 声明
+        var num = 10;
+        var usename = "張三";
+
+        // 修改变量值
+        num = 20
+
+        // 打印
+        console.log(num);
+
+        // 变量提升，相当于所有变量的声明提到前面
+        // 不报错，只显示undefined
+        console.log(er);
+        var er = 9;
+
+        // ---------------------------------------------
+        // 常见面试问题 
+        // 数据类型，6种
+        // 数值，字符串，布尔值，undefined，null，对象
+        // ES6 又新增了第七种 Symbol 类型的值和第八种 BigInt类型
+
+        // 原始（基本）数据类型：数值，字符串，布尔值
+        var age = 20;
+        var name = "哈哈哈";
+        var learn = true;
+
+        // 复合/合成/引用数据类型：对象
+        var user = {
+            name: "哈哈哈",
+            age: 20,
+            learn: true,
+            job: {
+
+            }
+        }
+
+        // 至于undefined和null，一般将它们看成两个特殊值
+        // null一般代表对象为空，undefined一般代表数值为空，实际没啥区别
+        var hello = undefined;
+        var hhh = null;
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #someDiv {
+            width: 100px;
+            height: 100px;
+            background: red;
+            opacity: 1;
+            /*透明度*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="someDiv"></div>
+
+    <script>
+
+        //  setInterval 指定某个任务每隔一段时间就执行一次
+        // 也就是无限次的定时执行
+        // var i = 0;
+        // setInterval(function () {
+        //     console.log(i);
+        //     i++;
+        // }, 1000);
+
+        var div = document.getElementById("someDiv");
+        var opacity = 1;
+        var fade = setInterval(function () {
+            if (opacity > 0) {
+                opacity -= 0.05;
+                div.style.opacity = opacity;
+            }
+            else {
+                clearInterval(fade);
+            }
+        }, 60);
+
+
+
+    </script>
+
+</body>
+
+</html>

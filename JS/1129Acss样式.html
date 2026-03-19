@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box" id="box"></div>
+
+    <script>
+
+        var box = document.getElementById("box");
+
+        //  setAttribute（属性，值） 方法直接操作网页元素的 style 属性
+        // box.setAttribute( "style", "width:200px;height:200px;background:red;");
+
+        // 元素节点的 style 属性
+        // js里面小横线不写，用驼峰命名法
+        // box.style.width = "300px";
+        // box.style.height = "300px";
+        // box.style.backgroundColor = "pink";
+
+        // cssText 属性，与第一个差不多
+        box.style.cssText="width:200px;height:200px;background:red;";
+
+    </script>
+
+</body>
+
+</html>

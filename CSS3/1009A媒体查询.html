@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- meta 标签让在不同的设备保持原始宽度 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 媒体查询能帮不同终端达到不同效果，根据设备大小自动加载不同的样式 -->
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+
+        /* 设备小于768px加载样式 */
+        @media screen and (max-width:768px) {
+            .box {
+                background-color: red;
+            }
+
+            .p1 {
+                /* 隐藏 */
+                display: none;
+            }
+
+            .p2 {
+                display: none;
+            }
+        }
+
+        /* 设备在768px到992px的 */
+        @media screen and (max-width:992px) and (min-width:768px) {
+            .box {
+                background-color: rgb(55, 30, 154);
+            }
+
+            .p1 {
+                display: none;
+            }
+
+            .p2 {
+                /* 显示 */
+                display: block;
+            }
+        }
+
+        @media screen and (min-width:992px) {
+            .box {
+                background-color: rgb(185, 25, 89);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <p class="p1">哈哈哈</p>
+    <p class="p2">好好好</p>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监
+        听函数定义在父节点上，由父节点的监听函数统一处理多个子元素
+        的事件。这种方法叫做事件的代理（delegation） -->
+
+    <ul id="list">
+        <li>列表1</li>
+        <li>列表2</li>
+        <p>hhh</p>
+    </ul>
+
+
+    <script>
+
+        var list = document.getElementById("list");
+        list.onclick = function () {
+            console.log("点击了");
+        }
+
+        //DOM2
+        list.addEventListener("click", function (e) {
+            // console.log(e.target.tagName);
+            if (e.target.tagName === "LI") {
+                console.log("点击了LI标签");   //监听
+                console.log(e.target.innerHTML); //打印内容
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

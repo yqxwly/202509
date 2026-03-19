@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            border: 5px solid pink;
+            margin: 10px;
+            background-color: antiquewhite;
+
+        }
+    </style>
+
+</head>
+
+<div class="box" id="box"></div>
+
+<script>
+    // 要用id获取
+    var ele = document.getElementById("box");
+    console.log(ele.clientHeight);
+    console.log(ele.clientWidth);
+
+    // 最常用
+    // 视口高度（屏幕高度）
+    console.log(document.documentElement.clientHeight);
+    // 网页总高度，内容撑开的范围
+    console.log(document.body.clientHeight)
+
+</script>
+
+<body>
+
+</body>
+
+</html>

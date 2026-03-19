@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>hello</div>
+    <div>hello</div>
+
+    <p class="text">hello</p>
+
+    <form name="itbaizhan"></form>
+
+    <div id="root">hhh</div>
+
+    <div class="nav">n1</div>
+    <div class="nav">n2</div>
+
+    <script>
+        // 搜索 HTML 标签名，返回类似数组
+        var div1 = document.getElementsByTagName('div');
+        var div2 = document.getElementsByTagName('div')[0];
+        console.log(div1);
+        console.log(div2);
+        // 修改值
+        div2.innerHTML = "hello world";
+
+        // 所有 class 名字符合指定条件的元素，元素的变化实时反映在返回结果中
+        var ele = document.getElementsByClassName("text");
+        console.log(ele);
+        ele.innerHTML = "hello!";
+
+        // 用于选择拥有 name 属性的 HTML 元素
+        // 使用率低
+        var forms = document.getElementsByName('itbaizhan');
+        console.log(forms);
+
+        // 最常用
+        // 匹配指定 id 属性的元素节点，id只有一个
+        var root = document.getElementById("root");
+        console.log(root);
+
+        // h5新增下面两个
+
+        // 接受一个 CSS 选择器作为参数，返回匹配该选择器的元素节点
+        // 如果有多个节点满足匹配条件，则返回第一个匹配的节点
+        var el1 = document.querySelector('.nav');
+        console.log(el1);
+
+        // 与上一个用法类似，区别是返回包含所有匹配给定选择器的节点
+        var el2 = document.querySelectorAll('.nav');
+        var el3 = document.querySelectorAll('.nav')[1];
+        console.log(el2);
+        console.log(el3);
+
+    </script>
+
+
+</body>
+
+</html>

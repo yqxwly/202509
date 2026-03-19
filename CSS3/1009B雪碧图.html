@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 一次全部传过来，用到哪张加载哪张 -->
+    <!-- 通过移动图片 -->
+    <style>
+        .icon1 {
+            /* 变为块元素 */
+            display: block;
+            width: 85px;
+            height: 100px;
+            background-image: url(表情.jpg);
+            border: 1px solid red;
+            background-position: -13px -20px;
+        }
+
+         .icon2 {
+            /* 变为块元素 */
+            display: block;
+            width: 85px;
+            height: 100px;
+            background-image: url(表情.jpg);
+            border: 1px solid red;
+            background-position: -710px -260px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 用 i span 都行 -->
+    <span class="icon1"></span>
+    <span class="icon2"></span>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 表单事件
+    1 input事件
+    2 select事件
+    3 Change事件
+    4 reset事件
+    5 submit事件 -->
+
+    <input type="text" id="username">
+    <input type="text" id="password">
+
+    <!-- action 里面有服务器地址 -->
+    <form action="" id="myForm" onsubmit="submitHandle()">
+        <input type="text" name="myName">
+        <button id="resetBtn">重置</button>
+        <button>提交表单</button>
+    </form>
+
+    <script>
+
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        var resetBtn = document.getElementById("resetBtn");
+        var myForm = document.getElementById("myForm");
+
+        // input
+        username.oninput = function (e) {
+            console.log(e.target.value);   //实时读取数据
+        }
+
+        //select:选中文本时触发
+        username.onselect = function () {
+            console.log("选中了");
+        }
+
+        // change:当全部修改完成时才会触发(回车/失去焦点)
+        password.onchange = function (e) {
+            console.log(e.target.value);
+        }
+
+        //reset和submit发生在表单对象 <form> 上，而不是发生在表单的成员上
+        // reset 重置表单
+        resetBtn.onclick = function () {
+            myForm.reset();    //触发在表单上清空表单
+        }
+
+        // submit事件当表单数据向服务器提交时触发
+        function submitHandle() {
+            console.log("想做的事情");
+        }
+
+    </script>
+
+</body>
+
+</html>

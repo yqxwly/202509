@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1 {
+            /* div 不设置宽高默认0*0 */
+            width: 500px;
+            height: 500px;
+
+            /* 背景颜色 */
+            background-color: blueviolet;
+        }
+
+        .box2 {
+            width: 500px;
+            height: 500px;
+
+            /* 背景图片 */
+            background-image: url("../HTML5/0909图片/4.jpg");
+            /* 背景是否重复，默认重复repeat，只x方向repeat-x，repeat-y，no-repeat */
+            background-repeat: no-repeat;
+
+            /* 设置图片大小 */
+            /* length、百分比，即两个值宽高，只写一个第二个默认auto */
+            background-size: 300px 400px;
+            background-size: 100% 70%;
+            /* 最常用cover，保持原比例缩放成 完全覆盖 的最小（多出来的看不到） */
+            background-size: cover;
+            /* contain，保持原比例缩放成 适合的 的最大（全能看到） */
+            background-size: contain;
+        }
+
+        .box3{
+
+            width: 300px;
+            height: 300px;
+
+            background-image: url(../HTML5/0909图片/base/1.webp);
+            /* 图片位置，水平和垂直起始位置开始渲染 */
+            /* (左中右，上中下)常用 或者 百分比 或者像素 */
+            background-position: right center;
+            background-position: 50% 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+
+    <div class="box2"></div>
+
+    <div class="box3"></div>
+
+</body>
+
+</html>

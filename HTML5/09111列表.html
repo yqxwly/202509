@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表</title>
+</head>
+
+<body>
+    <!-- 有无序可以相互嵌套 -->
+    <!-- 有序ol包裹（type：1默认, a, A, i, I）> li序号 -->
+    <ol type="a">
+        <li>苹果</li>
+        <li>阳光玫瑰</li>
+    </ol>
+
+    <!-- 嵌套 -->
+    <ol>
+        <li>
+            肉类
+            <ol type="a">
+                <li>牛肉</li>
+                <li>猪肉</li>
+            </ol>
+        </li>
+        <li>水果</li>
+    </ol>
+
+    <!-- 无序ul包裹（type：disc实心圆默认，circle空心圆，square方块，none） -->
+    <!-- ul导航效果（css改横向） -->
+    <ul>
+        <li>111</li>
+    </ul>
+    <ul type="square">
+        <li>111</li>
+    </ul>
+    <ul type="circle">
+        <li>111</li>
+    </ul>
+
+    <!-- 嵌套 -->
+    <ul>
+        <li>
+            111
+            <ul type="none">
+                <li>123</li>
+            </ul>
+            <ol>
+                <li>123</li>
+            </ol>
+        </li>
+    </ul>
+
+    <!-- ul>li*n -->
+     <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+     </ul>
+
+</body>
+
+</html>

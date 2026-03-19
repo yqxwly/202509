@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- keydown
+         keypress:有值的键时触发，按下时先触发keydown事件，再触发这个事件。
+         （trl、Alt、Shift、Meta 无值）
+         keyup -->
+
+    <input type="text" name="" id="username">
+
+    <script>
+
+        var username = document.getElementById("username");
+
+        username.onkeydown = function (event) {
+            console.log("哈哈哈");
+            // dowm 按下时获取，获取前面的，现在按的还不在有延迟
+            console.log(event.target.value);  //value属性就是输入框的数据
+        }
+
+        username.onkeyup = function (event) {
+            console.log("哈哈哈");
+            // up 同步获取
+            console.log(event.target.value);  //value属性就是输入框的数据
+            // keyCode:唯一标识
+            if(event.keyCode==13){
+                console.log("(回车)开始搜索");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h3 {
+            height: 500px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h3>好好</h3>
+    <h3>好好</h3>
+    <h3>好好</h3>
+    <h3>好好</h3>
+    <h3>好好</h3>
+
+    <script>
+        // 一直拖着不动，在规定时间后也会触发
+        function throttle(fn, delay) {
+            let valid = true;
+            return function () {
+                if (!valid) {
+                    //休息时间 暂不接客
+                    return false;
+                }
+                // 工作时间，执行函数并且在间隔期内把状态位设为无效
+                valid = false;
+                setTimeout(function () {
+                    fn();
+                    valid = true;
+                }, delay);
+            }
+        }
+
+        function showTop() {
+            var scrollTop = document.documentElement.scrollTop;
+            console.log('滚动条位置：' + scrollTop);
+        }
+
+        window.onscroll = throttle(showTop, 300)
+
+    </script>
+
+</body>
+
+</html>

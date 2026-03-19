@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="container"></div>
+
+    <script>
+        // 标签元素
+        // document.createElement 生成元素节点并返回
+        var newP = document.createElement("p");
+        // console.log(newP);
+
+        // document.createTextNode 方法用来生成文本节点
+        var content = document.createTextNode("我是文本");
+        console.log(content);
+        // appendChild，把内容/子元素塞到元素里面,会刷新前面的
+        newP.appendChild(content);
+        console.log(newP);
+
+        // 属性
+        // document.createAttribute 创建属性节点（id,class...）
+        var id = document.createAttribute("id");
+        console.log(id);
+        // 赋值
+        id.value = "hhh";
+        // setAttributeNode只有属性的，属性塞到标签里面，会刷新前面的
+        newP.setAttributeNode(id);
+
+        // 把创建的放入页面
+        var container=document.getElementById("container");
+        container.appendChild(newP);
+
+    </script>
+
+</body>
+
+</html>

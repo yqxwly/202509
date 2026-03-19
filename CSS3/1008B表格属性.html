@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table,
+        td {
+            /* 双边框 */
+            /* 大小，样式，边框颜色 */
+            border: 10px solid pink;
+        }
+
+        /* 折叠边框 */
+        table {
+            border-collapse: collapse;
+            width: 500px;
+            height: 300px;
+        }
+
+        td {
+            /* 文本对齐，默认左中 */
+            text-align: center;
+            vertical-align: bottom;
+
+            /* 內边框，用了就不用宽高了，对齐也没用了 */
+            padding: 50px;
+            /* 背景颜色 */
+            background-color: #555555;
+            /* 字体颜色 */
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>單元格</td>
+            <td>單元格</td>
+            <td>單元格</td>
+        </tr>
+        <tr>
+            <td>單元格</td>
+            <td>單元格</td>
+            <td>單元格</td>
+        </tr>
+        <tr>
+            <td>單元格</td>
+            <td>單元格</td>
+            <td>單元格</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
