@@ -41,6 +41,11 @@
         for (var i in arr) {
             console.log(arr[i]);
         }
+        // for...of...
+        for (var i of arr) {
+            console.log(i);
+        }
+
 
         // Array.isArray 方法返回一个布尔值，表示参数是否为数组
         // 它可以弥补typeof 运算符的不足，这个返回是object
@@ -64,7 +69,7 @@
         }
         console.log(list);
 
-        // join 方法以指定参数作为分隔符，将所有数组成员连接为一个 字符串 返回
+        // join 方法以指定参数作为分隔符，将所有 数组 成员连接为一个 字符串 返回
         // 如果不提供参数，默认用逗号分隔
         console.log(arr1.join('|'));
         console.log(arr1.join());
@@ -82,10 +87,10 @@
         console.log(arr.concat("哈基米哈基米", 1));
         // 应用场景：上拉加载，合并数据
 
-        // reverse 颠倒数组，改变原数组
+        // reverse 颠倒 数组 ，改变原数组
         console.log(arr.reverse());
         console.log(arr);
-        // 字符传反转
+        // 字符串反转
         var str = "hello";
         console.log(str.split("").reverse().join(""));
 

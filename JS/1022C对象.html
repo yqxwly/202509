@@ -34,6 +34,31 @@
         };
         console.log(user2.container.frontEnd);
 
+        // ----------------对象的遍历 -------------------------
+        // for...in...
+        // 这种方法是包含了原型链的
+        const obj = { a: 1, b: 2, c: 3 };
+        for (let key in obj) {
+            console.log(key, obj[key]); // 输出 a 1, b 2, c 3
+        }
+
+        // 下面不包含原型链
+        Object.keys(obj).forEach(key => {
+            console.log(key, obj[key]);
+        });
+
+        Object.values(obj).forEach(value => {
+            console.log(value);
+        });
+
+        Object.entries(obj).forEach(([key, value]) => {
+            console.log(key, value);
+        });
+
+        for (const [key, value] of Object.entries(obj)) {
+            console.log(`${key}: ${value}`);
+        }
+
         // Math对象
         Math.abs(-1);
         Math.max(2, -1, 5);
