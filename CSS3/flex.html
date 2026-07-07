@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- 默认主轴是水平方向, 交叉轴是垂直方向 -->
+    <!-- 左上角是起点 -->
+    <style>
+      .container {
+        /* ----------------------容器属性有 6 个 --------------------------------*/
+        display: flex;
+
+        /* 主轴方向: 默认row(水平)、column(垂直)、row-reverse(水平反转)、column-reverse(垂直反转) */
+        flex-direction: column;
+
+        /* 主轴方向对齐方式: 默认flex-start(前对齐)、flex-end(后对齐)、center(居中)
+        space-between(等距 首尾)、space-around(等距 两边)、space-evenly(等距 容器) */
+        justify-content: center;
+
+        /* 交叉轴对齐方式: 默认flex-start(前对齐)、flex-end(后对齐)、center(居中)、baseline(文字基线)、stretch(拉伸) */
+        align-items: center;
+
+        /* 换行: 默认nowrap(不换行)、wrap(换行)、wrap-reverse(反向换行) */
+        flex-wrap: wrap;
+
+        /* 多行项目的交叉轴方向对齐方式: 默认flex-start(前对齐)、flex-end(后对齐)、center(居中)、
+        stretch(拉伸)、space-between(等距 首尾)、space-around(等距 两边) */
+        align-content: center;
+
+        /* ----------------项目属性------------------- */
+        .item-1 {
+          /* 可以设置自己的交叉轴对齐方式，默认auto继承容器的align-items属性 */
+          align-self: flex-start;
+
+          /* flex-grow(按剩余空间比例放大填充)、flex-shrink(按被挤压空间比例缩小)、flex-basis(初始默认大小) */
+          /* 默认是 flex: 0 1 auto */
+          flex-grow: 1;
+        }
+        .item-2 {
+          flex-grow: 2;
+        }
+      }
+    </style>
+  </head>
+
+  <body></body>
+</html>

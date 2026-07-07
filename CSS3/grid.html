@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* flex 侧重子元素，通常腰围每个元素设置特殊规则 */
+      /* grid 侧重父元素，在一处整体定义 */
+      /* 以父元素为核心、严格统一布局用grid, 灵活的用flex */
+      /* flex 是一维的，是对整体子元素操作*/
+      /*grid是二维的，可以在每个格子中对元素操作，若轨道小于容器还可以对整体操作 */
+      /* align-items、 justify-items 和 align-content、 justify-content */
+
+      /* grid 水平行轴，垂直块轴 */
+      .container {
+        display: grid;
+
+        /* 子元素列的宽度 */
+        grid-template-columns: 100px 200px 300px;
+        grid-template-columns: 1fr 1fr 2fr; /* fr是浮动宽度 */
+
+        /* gap */
+        column-gap: 10px;
+        row-gap: 20px;
+        gap: 10px 20px; /* row-gap column-gap */
+        gap: 20px;
+
+        /* 排列属性 */
+        grid-template-areas:
+          "header header header"
+          "main main sidebar"
+          "footer footer footer"; /*html的语义化 */
+
+        header {
+          grid-area: header;
+        }
+        main {
+          grid-area: main;
+        }
+        sidebar {
+          grid-area: sidebar;
+        }
+        footer {
+          grid-area: footer;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* 伪类可以链式，伪元素不行 */
+      /* 常用伪类：
+        *:hover：鼠标悬停、:active：鼠标点击、:focus：获取焦点
+        *:first-child：第一个子元素、:last-child：最后一个子元素、:nth-child(n)：第n个子元素
+        *:not()：排除某个元素
+        */
+      /* 常用伪元素：
+        *::after：在元素内容之后插入虚拟元素、::before：在元素内容之前插入虚拟元素
+        *::first-line：首行、::first-letter：首字母
+        *::selection：选中内容
+        */
+      li:hover:last-child {
+        color: red;
+      }
+      li:hover:last-child::after {
+        content: "伪元素";
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </body>
+</html>
