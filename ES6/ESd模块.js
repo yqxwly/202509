@@ -1,4 +1,4 @@
-// 3、 Module 模块： ESM(比较新) 、 CommonJS(Node.js)
+// 3、 Module 模块： ESM(即ECMAScript Module，比较新) 、 CommonJS(Node.js)
 // 不同类型的功能放在不同模块里面
 
 // ESM
