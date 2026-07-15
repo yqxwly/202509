@@ -24,7 +24,7 @@ const url2 =
 loadImage(url1)
   .then((img1) => {
     console.log("img1", img1);
-    return loadImage(url2);
+    return loadImage(url2);      //return后的promise对象，then会等待这个promise对象的状态改变后再执行下一个then
   })
   .then((img2) => {
     console.log("img2", img2);
