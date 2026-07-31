@@ -33,15 +33,16 @@
         //     console.log("页面滚动");
         // }
 
+        // 每次触发时都重置一个计时器，只有在该计时器到期前没有新的触发，回调才会真正执行
         function debounce(fn, delay) {
             let timer = null;
-            // 闭包
+            // 闭包，能够“记住”并持续访问外层的 timer 变量，不会每次被重置回null
             return function () {
                 // timer存在，那么当前的计时取消，重新开始计时
                 if (timer) {
                     clearTimeout(timer);
                 }
-                // timer不存在，那么就执行函数
+                // 重置定时器
                 timer = setTimeout(fn, delay);
             }
         }

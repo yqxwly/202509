@@ -25,17 +25,18 @@
     <script>
         // 一直拖着不动，在规定时间后也会触发
         function throttle(fn, delay) {
+            // valid：当前是否可以执行回调
             let valid = true;
             return function () {
                 if (!valid) {
-                    //休息时间 暂不接客
+                    //valid 为 false，在执行的冷却期
                     return false;
                 }
                 // 工作时间，执行函数并且在间隔期内把状态位设为无效
                 valid = false;
                 setTimeout(function () {
                     fn();
-                    valid = true;
+                    valid = true;    // fn()执行后解锁，允许下一次定时器
                 }, delay);
             }
         }
