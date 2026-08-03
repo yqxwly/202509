@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>商品</p>
+    <p>价格</p>
+    <p>
+        <button>支付</button>
+    </p>
+
+    <script>
+        // 点支付跳出弹窗，需要确定
+        document.getElementsByTagName('button')[0].onclick = function() {
+            var isPay = window.confirm('是否支付？');
+            if (isPay) {
+                location.href = './倒计时.html';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+        span {
+            color: red;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>恭喜您，支付成功！</h1>
+    <span id="jumpTo">10</span>秒后自动返回首页
+    <p><button>立即返回</button></p>
+
+    <script>
+        // 加载页面时，触发定时器10s
+        window.onload = function() {
+            let timer = 10;
+            setInterval(()=>{
+                timer--;
+                document.getElementById('jumpTo').innerText = timer;
+                if(timer === 0) {
+                    location.href = './主页.html';
+                }
+            }, 1000)
+        }
+
+        document.getElementsByTagName('button')[0].onclick = function() {
+            location.href = './主页.html';
+        }
+            
+           
+    </script>
+</body>
+</html>
