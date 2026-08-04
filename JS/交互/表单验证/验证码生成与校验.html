@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        width: 400px;
+        margin: 0 auto;
+
+        .code_show {
+          margin: 20px 0;
+
+          .code {
+            padding: 5px 10px;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic; /* 斜体 */
+            color: blue;
+            background-color: #b3e6f3;
+          }
+
+          #linkbt {
+            margin-left: 10px;
+            font-size: 12px;
+            text-decoration: underline; /* 下划线 */
+            color: rgb(36, 75, 117);
+            cursor: pointer;
+          }
+        }
+
+        .input_code {
+          margin: 20px 0;
+
+          #inputCode {
+            padding: 5px 10px;
+            font-size: 12px;
+          }
+        }
+
+        #submit {
+          padding: 5px 10px;
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="code_show">
+        <span class="code" id="checkcode"></span>
+        <a id="linkbt">看不清换一张</a>
+      </div>
+      <div class="input_code">
+        <label for="inputCode">验证码：</label>
+        <input type="text" id="inputCode" />
+        <span id="text_show"></span>
+      </div>
+      <input type="button" value="确定" id="submit" />
+    </div>
+
+    <script>
+      window.onload = function () {
+        // 生成验证码
+        function getCode() {
+          let arr=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+          let code = '';
+          for (let i = 0; i < 6; i++) {
+            let index = Math.floor(Math.random() * arr.length);
+            code += arr[index];
+          }
+          return code;
+        }
+        // 初始值
+        document.getElementById('checkcode').innerText = getCode();
+
+        // 点击换一张
+        document.getElementById('linkbt').onclick = function () {
+          document.getElementById('checkcode').innerText = getCode();
+        };
+
+        // 提交对比
+        document.getElementById('submit').onclick = function () {
+            let code = document.getElementById('checkcode').innerText;
+            let inputCode = document.getElementById('inputCode').value;
+            if (code != inputCode) {
+                alert('验证码错误！'); 
+                document.getElementById('inputCode').value = '';   //清空输入框
+                document.getElementById('checkcode').innerText = getCode();  //重新生成验证码
+                return false;
+            } else {
+                alert('验证成功！');
+                // 后续代码...
+            }
+        }
+      };
+      window;
+    </script>
+  </body>
+</html>
