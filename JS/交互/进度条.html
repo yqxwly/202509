@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #box {
+        width: 300px;
+        height: 30px;
+        border: 1px solid black;
+        margin-bottom: 10px;
+      }
+
+      .son {
+        width: 0;
+        height: 30px;
+        background-color: pink;
+        text-align: center;
+        line-height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <div class="son">
+        <span>0%</span>
+      </div>
+    </div>
+
+    <button id="btn">安装</button>
+
+    <script>
+      let son = document.querySelector(".son");
+      let btn = document.getElementById("btn");
+      let span = document.getElementsByTagName("span");
+      let timer = null; //用来销毁定时器
+
+      btn.onclick = function () {
+        let width = 0;
+
+        // 有一个定时器在执行，就不再创建新的定时器
+        if (timer == null) {
+          timer = setInterval(() => {
+            width += 1;
+            son.style.width = width + "px";
+            span[0].innerText = Math.ceil((width / 300) * 100) + "%";
+
+            if (width === 300) {
+              clearInterval(timer);
+              timer = null; 
+            }
+          }, 10);
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .content {
+        width: 100%;
+        margin-top: 50px;
+        margin-left: 100px;
+
+        .search-box {
+          display: flex;
+
+          #search-input {
+            width: 300px;
+            height: 25px;
+            margin-right: 10px;
+          }
+        }
+
+        /* 下拉框 */
+        .show {
+          width: 295px;
+          height: 200px;
+          border: 1px solid #ccc;
+          display: none; /* 默认隐藏 */
+          font-size: 12px;
+          padding-left: 10px;
+          padding-top: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="search-box">
+        <input type="text" placeholder="请输入课程" id="search-input" />
+        <input type="submit" id="search-button" />
+      </div>
+      <div class="show" id="show"></div>
+    </div>
+
+    <script>
+      // 1. 展示区域的显示与隐藏
+      // 2. 匹配搜索
+
+      let arr = [
+        "web前端精英特训班 9800元",
+        "Vue前端就业班 6800元",
+        "HTML基础班 4800元",
+        "CSS入门班 3800元",
+        "JavaScript零基础班 2800元",
+        "HTML+CSS核心班 5800元",
+      ];
+
+      let input = document.getElementById("search-input");
+      let show = document.getElementById("show");
+
+      // 键盘抬起，出现搜索下拉框
+      input.onkeyup = function () {
+        show.style.display = "block";
+
+        // 匹配搜索
+        let str = "";
+        arr.forEach((item) => {
+          if (item.indexOf(this.value) != -1) {
+            str += `<p>${item}</p>`;
+          }
+        });
+
+        if (!input.value || !str) {
+          show.innerHTML = "<p>没有找到相关课程</p>";
+        } else {
+          show.innerHTML = str;
+        }
+      };
+
+      // 失去焦点，隐藏搜索下拉框
+      input.onblur = function () {
+        show.style.display = "none";
+        this.value = "";
+      };
+    </script>
+  </body>
+</html>

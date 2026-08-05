@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #result{
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h2>敏感词过滤</h2>
+    <p>
+        <textarea name="" id="area" cols="30" rows="10"></textarea>
+    </p>
+    <p>
+        <input type="submit" value="发布" id="btn">
+    </p>
+
+    <p id="result"></p>
+
+    <script>
+        let area = document.getElementById('area');
+        let btn = document.getElementById('btn');
+        let result = document.getElementById('result');
+
+        // 正则，global 全局匹配，i 忽略大小写，m 多行匹配
+        let reg = /(傻|笨|蠢)/g;
+
+        btn.onclick = function(){
+            let newStr = area.value.replace(reg,'*');
+            result.innerHTML = newStr;
+        }
+    </script>
+</body>
+</html>
