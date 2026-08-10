@@ -2,6 +2,7 @@ import { getBlogPosts } from './data.js'
 import './style.css'
 import HelloImg from './assets/image/111.webp'
 import './test/add/PrintAdd.js'
+// import '@babel-plugin-polyfill-corejs3'  // 引入 polyfill，兼容低版本浏览器
 
 const posts = getBlogPosts()
 const ul = document.createElement('ul')
